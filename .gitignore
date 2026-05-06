@@ -1,0 +1,10 @@
+node_modules/
+_site/
+.env
+.DS_Store
+src/_private/profile.private.json
+src/_private/posts/*.md
+!src/_private/posts/*.example.md
+src/_private/avatar-private.*
+!src/_private/avatar-private.example.svg
+src/assets/js/private-payload.js
