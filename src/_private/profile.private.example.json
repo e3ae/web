@@ -1,0 +1,10 @@
+{
+  "avatarFile": "avatar-private.example.svg",
+  "name": { "eng": "e3 private", "rus": "e3 private", "fra": "e3 private", "deu": "e3 private" },
+  "status": { "eng": "Private status unlocked", "rus": "Приватный статус открыт", "fra": "Statut privé déverrouillé", "deu": "Privater Status entsperrt" },
+  "details": [
+    { "id": "phone", "value": "+7 999 999 99 99 • +33 06 66 66 66 66" },
+    { "id": "email", "value": "a@e3.su • @e3aae" },
+    { "id": "bank", "value": "DE 4801 1243 5738 9827 • PGP: 4801 1243 5738 9827" }
+  ]
+}

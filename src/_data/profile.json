@@ -1,0 +1,38 @@
+{
+  "avatar": "/assets/img/avatar-public.svg",
+  "greeting": {
+    "eng": "Hello, my name is",
+    "rus": "Привет, меня зовут",
+    "fra": "Bonjour, je m’appelle",
+    "deu": "Hallo, mein Name ist"
+  },
+  "name": {
+    "eng": "e3",
+    "rus": "e3",
+    "fra": "e3",
+    "deu": "e3"
+  },
+  "status": {
+    "eng": "This is a current status text",
+    "rus": "Это текущий статус",
+    "fra": "Ceci est un statut actuel",
+    "deu": "Dies ist ein aktueller Statustext"
+  },
+  "details": [
+    {
+      "id": "phone",
+      "public": "+7 999 ••• •• •• • +33 06 •• •• •• ••",
+      "blurred": true
+    },
+    {
+      "id": "email",
+      "public": "a••@e3.su • @e3•••",
+      "blurred": true
+    },
+    {
+      "id": "bank",
+      "public": "DE 4801 •••• •••• 9827 • PGP",
+      "blurred": true
+    }
+  ]
+}

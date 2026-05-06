@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Home
+---
+<script type="application/json" id="public-profile">{{ profile | json | safe }}</script>
+<script type="application/json" id="public-site">{{ site | json | safe }}</script>
+
+<header class="hero" aria-label="Profile">
+  <button class="avatar-button" type="button" data-private-trigger aria-label="Unlock private profile"><img class="avatar" data-profile-avatar src="{{ profile.avatar | url }}" alt="Profile picture"></button>
+  <div class="identity"><p class="greeting" data-profile-greeting>{{ profile.greeting[site.defaultLocale] }}</p><h1 data-profile-name>{{ profile.name[site.defaultLocale] }}</h1></div>
+  <div class="top-controls" aria-label="Site controls"><button class="icon-button" type="button" data-theme-toggle aria-label="Toggle theme">◐</button><button class="icon-button" type="button" data-caps-toggle aria-label="Toggle caps">Aa</button><button class="icon-button" type="button" data-private-trigger aria-label="Unlock private data">⌘</button></div>
+</header>
+
+<nav class="locale-switch" aria-label="Language">{% for locale in site.locales %}<button type="button" data-locale-button="{{ locale.code }}" {% if locale.code == site.defaultLocale %}aria-current="true"{% endif %}>{{ locale.label }}</button>{% endfor %}</nav>
+<p class="status" data-profile-status>{{ profile.status[site.defaultLocale] }}</p>
+<div class="details" aria-label="Private details">{% for item in profile.details %}<button class="detail {% if item.blurred %}is-blurred{% endif %}" type="button" data-detail-id="{{ item.id }}" {% if item.blurred %}data-private-trigger{% endif %}>{{ item.public }}</button>{% if not loop.last %}<span class="dot">•</span>{% endif %}{% endfor %}</div>
+
+<section class="section" aria-labelledby="projects-title"><button class="section-heading" type="button" data-fold-toggle aria-expanded="true"><span id="projects-title" data-ui="projects">{{ site.ui.projects[site.defaultLocale] }}</span><span aria-hidden="true">⌄</span></button><div class="rule"></div><div class="project-list" id="projects-list">{% for project in collections.projects %}<a class="project-card" href="{{ project.url | url }}"><strong>{{ project.data.title }}</strong><span>{{ project.data.subtitle or project.data.excerpt or 'Subtitle' }}</span></a>{% endfor %}</div></section>
+
+<section class="section" aria-labelledby="posts-title"><button class="section-heading" type="button" data-fold-toggle aria-expanded="true"><span id="posts-title" data-ui="posts">{{ site.ui.posts[site.defaultLocale] }}</span><span aria-hidden="true">⌄</span></button><div class="rule"></div><div class="post-list" id="posts-list">{% for post in collections.publicPosts %}<a class="post-row" href="{{ post.url | url }}"><span><strong>{{ post.data.title }}</strong><time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></span><span aria-hidden="true">↘</span></a>{% endfor %}</div></section>
+
+<section class="message-block" aria-label="Anonymous message"><form class="message-form" id="anon-form" data-endpoint="{{ site.formEndpoint }}"><label class="sr-only" for="anonymous-message" data-ui="messagePlaceholder">{{ site.ui.messagePlaceholder[site.defaultLocale] }}</label><textarea id="anonymous-message" name="message" rows="3" placeholder="{{ site.ui.messagePlaceholder[site.defaultLocale] }}" data-message-placeholder></textarea><div class="message-actions"><span aria-hidden="true">⊠</span><button type="submit" aria-label="Send anonymous message">↑</button></div></form><p class="form-note" id="form-note" role="status"></p></section>
+<footer class="footer-links" aria-label="Footer links">{% for link in links %}<a href="{{ link.url }}" rel="me noopener" target="_blank"><span aria-hidden="true">{{ link.icon }}</span> {{ link.label }}</a>{% endfor %}</footer>
+
+<dialog class="access-dialog" id="access-dialog"><form method="dialog" class="access-card" id="access-form"><button class="dialog-close" value="cancel" aria-label="Close">×</button><label for="access-code" data-ui="accessTitle">{{ site.ui.accessTitle[site.defaultLocale] }}</label><div class="access-input-row"><input id="access-code" name="access-code" type="password" autocomplete="current-password"><button class="access-submit" type="submit" value="default" aria-label="Unlock">➜</button></div><p class="access-error" id="access-error" role="alert"></p></form></dialog>
+<dialog class="reader-dialog" id="private-reader"><article class="reader-card"><button class="dialog-close" type="button" data-reader-close aria-label="Close">×</button><p class="private-label" data-ui="privateBadge">{{ site.ui.privateBadge[site.defaultLocale] }}</p><h2 data-reader-title></h2><div class="post-body" data-reader-body></div></article></dialog>

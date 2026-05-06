@@ -1,0 +1,23 @@
+{
+  "title": "e3",
+  "description": "Minimal personal website with public and private layers",
+  "defaultLocale": "eng",
+  "formEndpoint": "",
+  "locales": [
+    { "code": "eng", "label": "ENG" },
+    { "code": "rus", "label": "RUS" },
+    { "code": "fra", "label": "FRA" },
+    { "code": "deu", "label": "DEU" }
+  ],
+  "ui": {
+    "projects": { "eng": "Projects", "rus": "Проекты", "fra": "Projets", "deu": "Projekte" },
+    "posts": { "eng": "Posts", "rus": "Посты", "fra": "Articles", "deu": "Beiträge" },
+    "messagePlaceholder": { "eng": "Send me an anonymous message", "rus": "Отправить анонимное сообщение", "fra": "Envoyez-moi un message anonyme", "deu": "Sende mir eine anonyme Nachricht" },
+    "accessTitle": { "eng": "Please, enter your access code", "rus": "Введите код доступа", "fra": "Veuillez entrer votre code d’accès", "deu": "Bitte Zugangscode eingeben" },
+    "wrongCode": { "eng": "Wrong or unavailable access code", "rus": "Неверный или недоступный код", "fra": "Code incorrect ou indisponible", "deu": "Falscher oder nicht verfügbarer Code" },
+    "noPrivateData": { "eng": "No private payload is published for this build", "rus": "В этой сборке нет приватных данных", "fra": "Aucune donnée privée n’est publiée dans cette version", "deu": "Für diesen Build sind keine privaten Daten veröffentlicht" },
+    "messageReady": { "eng": "Message copied. Connect a form endpoint to send it automatically.", "rus": "Сообщение скопировано. Подключите form endpoint для автоматической отправки.", "fra": "Message copié. Connectez un endpoint de formulaire pour l’envoyer automatiquement.", "deu": "Nachricht kopiert. Verbinde einen Formular-Endpunkt für automatisches Senden." },
+    "messageSent": { "eng": "Message sent", "rus": "Сообщение отправлено", "fra": "Message envoyé", "deu": "Nachricht gesendet" },
+    "privateBadge": { "eng": "private", "rus": "приватно", "fra": "privé", "deu": "privat" }
+  }
+}

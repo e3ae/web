@@ -1,0 +1,5 @@
+[
+  { "label": "basement", "url": "https://example.com/basement", "icon": "↗" },
+  { "label": "github", "url": "https://github.com/your-name", "icon": "↗" },
+  { "label": "are.na", "url": "https://www.are.na/", "icon": "↗" }
+]

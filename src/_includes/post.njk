@@ -1,0 +1,12 @@
+---
+layout: base.njk
+---
+<article class="post-page">
+  <a class="back-link" href="{{ '/' | url }}">← home</a>
+  <header class="post-header">
+    <p class="post-date">{{ page.date | readableDate }}</p>
+    <h1>{{ title }}</h1>
+    {% if subtitle %}<p class="post-subtitle">{{ subtitle }}</p>{% endif %}
+  </header>
+  <div class="post-body">{{ content | safe }}</div>
+</article>
